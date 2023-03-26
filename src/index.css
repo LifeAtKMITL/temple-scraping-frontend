@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fonts setting */
+
+@font-face {
+  font-family: 'sukhumvit';
+  src: url('assets/fonts/sukhumvit-set/SukhumvitSet-Text.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'sukhumvit-bold';
+  src: url('assets/fonts/sukhumvit-set/SukhumvitSet-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'sukhumvit-semibold';
+  src: url('assets/fonts/sukhumvit-set/SukhumvitSet-SemiBold.ttf') format('truetype');
+}
+
+/* Default setting */
+
+* {
+  font-family: 'sukhumvit', 'sans-serif', 'Arial';
+}
