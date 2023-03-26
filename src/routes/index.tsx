@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 import About from '@/pages/About';
 import Document from '@/pages/Document';
@@ -8,5 +8,5 @@ export const router = createBrowserRouter([
   { path: '/', element: <Home /> },
   { path: '/about', element: <About /> },
   { path: '/document', element: <Document /> },
-  { path: '*', element: <div>Not Found</div> },
+  { path: '*', element: <Navigate to='/' /> },
 ]);
