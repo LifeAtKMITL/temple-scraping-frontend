@@ -1,11 +1,10 @@
-import axios from 'axios';
 import { TemplesObject } from '@/types';
+import axios from '@/utils/axios';
 
 const getTemples = async (callBack: (response: TemplesObject[]) => void) => {
-  const url = 'https://toc-api.zantaclaus.dev/';
-
   try {
-    const res = await axios.get(url);
+    const res = await axios.get('/');
+    console.log(res.data);
     callBack(res.data);
   } catch (error) {
     console.log(error);
