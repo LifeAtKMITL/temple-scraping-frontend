@@ -8,7 +8,7 @@ const getTemples = async (callBack: (response: TemplesObject[]) => void) => {
     const res = await axios.get(url);
     callBack(res.data);
   } catch (error) {
-    throw error;
+    return error;
   }
 };
 
