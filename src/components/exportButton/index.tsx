@@ -1,8 +1,14 @@
-import React from 'react';
+import useTemple from '@/hooks/useTemple';
 import FileSaver from 'file-saver';
 
 const ExportButton = () => {
-  const downloadCSV = (data: string[], filename: string) => {
+  const { provinces } = useTemple();
+
+  const downloadCSV = (filename: string) => {
+    let data: string[] = [];
+    provinces?.map((p) => {
+      data = data.concat(p.data);
+    });
     const fileType = 'text/csv;charset=UTF-8';
     const fileExtension = '.csv';
     const csvData = '\uFEFF' + data.join('\n');
@@ -15,7 +21,7 @@ const ExportButton = () => {
       <button
         className='bg-[#5EE8D5] w-[200px] h-[100px] rounded-xl'
         onClick={() => {
-          downloadCSV(['วัดดูยูมีน', 'วัดร้าง', 'วัดใจ'], 'temples');
+          downloadCSV('templesList');
         }}
       >
         download
