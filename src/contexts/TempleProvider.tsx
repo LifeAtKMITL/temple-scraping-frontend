@@ -6,6 +6,7 @@ import { getTemples as getTemplesAPI } from '@/api';
 const TempleProvider = ({ children }: PropsWithChildren) => {
   const [provinces, setProvinces] = useState<TemplesObject[] | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
+  const [provincesFilter, setProvincesFilter] = useState<TemplesObject[]>([]);
 
   const getTemples = async () => {
     await getTemplesAPI(setProvinces);
@@ -16,7 +17,15 @@ const TempleProvider = ({ children }: PropsWithChildren) => {
     getTemples();
   }, []);
 
-  return <TempleContext.Provider value={{ provinces, isLoading }}>{children}</TempleContext.Provider>;
+  useEffect(() => {
+    setProvincesFilter(provinces || []);
+  }, [provinces]);
+
+  return (
+    <TempleContext.Provider value={{ provinces, isLoading, provincesFilter, setProvincesFilter }}>
+      {children}
+    </TempleContext.Provider>
+  );
 };
 
 export default TempleProvider;
