@@ -1,4 +1,5 @@
 import useTemple from '@/hooks/useTemple';
+import ResizeDiv from "@/components/resizeDiv";
 
 export default function Home() {
   const { provinces, isLoading } = useTemple();

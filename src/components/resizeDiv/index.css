@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  position: relative;
+  background-color: #10192d;
+  color: #ffffff;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+  color: 'white';
+  border-radius: 0px 12px 12px 0px;
+  background-color: #1a2131;
+  height: 100vh;
+  max-width: 500px;
+  color: #ffffff;
+}
+
+.actual-content {
+  margin-right: 10px;
+  top: 0;
+}
+
+.resize-container {
+  display: flex;
+  align-items: center;
+}
+
+.panda {
+  margin: 10px 0px;
+}
+
