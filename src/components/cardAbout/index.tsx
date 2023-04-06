@@ -52,7 +52,7 @@ export default function CardAbout({ name, studentID, img, github, quotation, img
         <p className='max-w-[110px] text-[#e7e7e7] mb-3 text-[15px]'>{quotation}</p>
 
         {/* colors */}
-        <ul className='flex gap-x-[10px]'>
+        <ul className='flex gap-x-[5px]'>
           {colors.map((color, index) => {
             return (
               <li
