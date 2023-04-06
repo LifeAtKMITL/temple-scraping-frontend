@@ -1,7 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 
 import { router } from './routes';
-import TempleProvider from './contexts/TempleProvider';
+import TempleProvider from '@/contexts/Temple/TempleProvider';
 
 function App() {
   return (
