@@ -2,7 +2,6 @@ import Pat from '@/assets/images/pat.png';
 import CardAbout from '@/components/cardAbout';
 
 interface MemberData {
-  key: string;
   _id: string;
   name: string;
   studentID: string;
@@ -14,7 +13,6 @@ interface MemberData {
 
 const members: MemberData[] = [
   {
-    key: '1',
     _id: '1',
     name: 'napat moonpinij',
     studentID: '63010283',
@@ -24,7 +22,6 @@ const members: MemberData[] = [
     imgStyles: 'absolute -bottom-4 -right-[350px] w-[500px]',
   },
   {
-    key: '2',
     _id: '2',
     name: 'Napat Moonpinij',
     studentID: '63010283',
@@ -34,7 +31,6 @@ const members: MemberData[] = [
     imgStyles: 'absolute -bottom-5 -right-[80px] w-[160px]',
   },
   {
-    key: '3',
     _id: '3',
     name: 'napat moonpinij',
     studentID: '63010283',
@@ -53,16 +49,7 @@ export default function About() {
       </div>
       <div className='grid  md:grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 container mx-auto justify-items-center py-[80px] gap-36 '>
         {members.map((member) => (
-          <CardAbout
-            // key={member.key}
-            // _id={member._id}
-            // name={member.name}
-            // studentId={member.studentID}
-            // img={member.img}
-            // github={member.github}
-            // quotation={member.quotation}
-            {...member}
-          />
+          <CardAbout key={member._id} {...member} />
         ))}
       </div>
     </div>
