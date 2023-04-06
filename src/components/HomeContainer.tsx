@@ -5,7 +5,7 @@ function HomeContainer() {
   const { provinces, isLoading } = useTemple();
 
   return (
-    <div>
+    <div className='w-full h-screen overflow-y-scroll'>
       <h1>HomeContainer</h1>
       <ExportButton />
       <div className='flex gap-4'>
