@@ -1,6 +1,6 @@
 import useTemple from '@/hooks/useTemple';
-import ResizeDiv from "@/components/resizeDiv";
-import HomeContainer from "@/components/HomeContainer";
+import ResizeDiv from '@/components/resizeDiv';
+import HomeContainer from '@/components/HomeContainer';
 import './Home.css'
 
 export default function Home() {
