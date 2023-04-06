@@ -3,7 +3,7 @@ import { TemplesObject } from '@/types';
 import { useRef } from 'react';
 
 const SearchBox = () => {
-  const { provinces, provincesFilter, setProvincesFilter } = useTemple();
+  const { provinces, setProvincesFilter } = useTemple();
 
   const textRef = useRef<HTMLInputElement>(null);
   const searching = () => {
@@ -15,13 +15,16 @@ const SearchBox = () => {
       });
       setProvincesFilter(temp);
     }
-    console.log('fileter', provincesFilter);
+    // console.log('fileter', provincesFilter);
   };
 
   return (
-    <div>
-      <input type='text' className='bg-[#707070]' ref={textRef} onChange={() => searching()} />
-    </div>
+    <input
+      type='text'
+      className='bg-[#ffffff] h-[30px] w-[300px] px-[3px] rounded-md mt-[10px]'
+      ref={textRef}
+      onChange={() => searching()}
+    />
   );
 };
 
