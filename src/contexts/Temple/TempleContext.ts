@@ -1,9 +1,11 @@
 import { TemplesObject } from '@/types';
-import { createContext } from 'react';
+import { Dispatch, SetStateAction, createContext } from 'react';
 
 export interface ITempleContext {
   provinces: TemplesObject[] | undefined;
   isLoading: boolean;
+  provincesFilter: TemplesObject[];
+  setProvincesFilter: Dispatch<SetStateAction<TemplesObject[]>>;
 }
 
 const TempleContext = createContext<ITempleContext>({} as ITempleContext);
