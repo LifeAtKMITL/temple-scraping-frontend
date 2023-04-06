@@ -19,7 +19,7 @@ const ExportButton = () => {
   return (
     <div>
       <button
-        className='bg-[#5EE8D5] w-[200px] h-[100px] rounded-xl'
+        className='bg-[#c30c0c] w-[200px] h-[100px] rounded-xl'
         onClick={() => {
           downloadCSV('templesList');
         }}
