@@ -51,7 +51,7 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
           ref={imageRef}
           src={imgActivePath}
           alt='imgProvince'
-          className='transition'
+          className='image'
           onMouseMove={handleMouseMove}
           onClick={handleImageClick}
         />

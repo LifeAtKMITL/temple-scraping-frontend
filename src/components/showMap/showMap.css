@@ -1,0 +1,58 @@
+.main--container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #10192D;
+    position: relative;
+}
+  .Lopburi--container{
+    top: 100px;
+    /* width: 15rem; */
+    position: absolute;
+  }
+  .Lamphun--container{
+    position: absolute;
+    /* width: 10rem; */
+    top: 50px;
+    left: 230px;
+  }
+  
+  .Ratchaburi--container{
+    position: absolute;
+    top: 330px;
+    left: 20px;
+    /* width: 14rem; */
+  }
+  .Lampang--container{
+    position: absolute;
+    /* width: 9rem; */
+    top: 330px;
+    left: 220px;
+  }
+  
+  @media only screen and (min-width: 820px){
+    .Lopburi--container{
+      top: 100px;
+      /* width: 20rem; */
+      position: absolute;
+    }
+    
+    .Lamphun--container{
+      position: absolute;
+      /* width: 13rem; */
+      top: 50px;
+      left: 310px;
+    }
+    
+    .Ratchaburi--container{
+      position: absolute;
+      top: 450px;
+      left: 20px;
+      /* width: 19rem; */
+    }
+    .Lampang--container{
+      position: absolute;
+      /* width: 14rem; */
+      top: 450px;
+      left: 330px;
+    }
+  }
