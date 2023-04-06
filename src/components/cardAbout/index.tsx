@@ -47,7 +47,7 @@ export default function CardAbout({ name, studentID, img, github, quotation, img
       >
         <div className='text-[15px] mb-1 text-[#e7e7e7]'>{studentID}</div>
         {/* card title */}
-        <h1 className='text-3xl mb-4 font-extrabold text-[#5EE8D5]'>{name}</h1>
+        <h1 className='text-2xl mb-4 font-extrabold text-[#5EE8D5]'>{name}</h1>
         {/* card subtitle */}
         <p className='max-w-[110px] text-[#e7e7e7] mb-3 text-[15px]'>{quotation}</p>
 
@@ -65,7 +65,7 @@ export default function CardAbout({ name, studentID, img, github, quotation, img
         </ul>
 
         <Link to={github} target='blank'>
-          <GoMarkGithub className='absolute bottom-4 text-[22px] text-[#e7e7e7]' />
+          <GoMarkGithub className='absolute bottom-6 text-[23px] text-[#e7e7e7]' />
         </Link>
 
         {/* card image */}
