@@ -7,7 +7,6 @@ import LopburiIMGDefault from '@/assets/images/Lopburi_default.png';
 import LopburiIMGActive from '@/assets/images/Lopburi_active.png';
 import LamphunIMGDefault from '@/assets/images/Lamphun_default.png';
 import LamphunIMGActive from '@/assets/images/Lamphun_active.png';
-import './showMap.css';
 import MapHover from '../map';
 
 const Showmap = () => {
