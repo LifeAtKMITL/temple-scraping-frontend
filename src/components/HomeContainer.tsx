@@ -1,5 +1,5 @@
 import useTemple from '@/hooks/useTemple';
-import ExportButton from './exportButton';
+import ExportButton from './ExportButton';
 
 function HomeContainer() {
   const { provinces, isLoading } = useTemple();
