@@ -55,7 +55,7 @@ const ResizeDiv: React.FC<ArrowProps> = ({ initialWidth = 500 }) => {
             <img className='panda' src='src/assets/images/panda.png' />
           </div>
         )}
-        <div className='resize-container'>
+        {/* <div className='resize-container'>
           <div className='resize'
             style={{
               position: 'relative',
@@ -67,7 +67,7 @@ const ResizeDiv: React.FC<ArrowProps> = ({ initialWidth = 500 }) => {
             }}
             onMouseDown={handleMouseDown}
           />
-        </div>
+        </div> */}
       </div>
   );
 };
