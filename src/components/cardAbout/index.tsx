@@ -1,8 +1,4 @@
-import React from 'react';
-
-// import framer hooks
 import { useMotionValue, useTransform, motion } from 'framer-motion';
-import { type } from 'os';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
