@@ -7,9 +7,9 @@ const SearchBox = () => {
 
   const searching = () => {
     const textSearch = textRef.current?.value || '';
-    if (textSearch) {
-      setSearchText(textSearch);
-    }
+
+    setSearchText(textSearch);
+
     // console.log('search', searchText);
   };
 
