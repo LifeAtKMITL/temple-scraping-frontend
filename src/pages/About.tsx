@@ -1,3 +1,4 @@
+import SpeedDial from '@/components/SpeedDial';
 import CardAbout from '@/components/cardAbout';
 
 interface MemberData {
@@ -114,7 +115,7 @@ const members: MemberData[] = [
 
 export default function About() {
   return (
-    <div className='bg-bg'>
+    <div className='bg-bg h-screen overflow-y-scroll'>
       <h1 className='text-[#5EE8D5] text-[40px] lg:text-[50px] flex justify-center font-bold py-8'>สมาชิกในทีม</h1>
       <div className='grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 container mx-auto justify-items-center pt-[20px] pb-[90px] gap-36'>
         {members
@@ -123,6 +124,7 @@ export default function About() {
             <CardAbout key={member._id} {...member} />
           ))}
       </div>
+      <SpeedDial />
     </div>
   );
 }
