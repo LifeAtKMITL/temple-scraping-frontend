@@ -1,12 +1,9 @@
-import useTemple from '@/hooks/useTemple';
 import ResizeDiv from '@/components/resizeDiv';
 import HomeContainer from '@/components/HomeContainer';
-import './Home.css'
 
 export default function Home() {
   return (
-    // TODO: example usage (delete later)
-    <div className='home-con'>
+    <div className='flex bg-bg'>
       <ResizeDiv />
       <HomeContainer />
     </div>

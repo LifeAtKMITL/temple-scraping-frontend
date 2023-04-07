@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, MouseEvent } from 'react';
-import './index.css';
+import React from 'react';
 import Showmap from '../showMap';
 import SearchBox from '../SearchBox';
+import './index.css';
 
 interface ArrowProps {
   initialWidth?: number;

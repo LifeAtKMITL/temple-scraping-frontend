@@ -1,6 +1,4 @@
-import React from 'react';
-import { useRef, useState } from 'react';
-import './map.css';
+import React, { useRef, useState } from 'react';
 
 interface IMap {
   imgDefaultPath: string;
