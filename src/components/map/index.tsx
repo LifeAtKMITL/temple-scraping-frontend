@@ -15,7 +15,6 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
 
   // Detect transparency of the image
   const isTransparent = (pixelData: Uint8ClampedArray): boolean => {
-    console.log(pixelData);
     return pixelData[3] === 0; // Check if alpha channel is 0 (fully transparent)
   };
 
@@ -51,7 +50,7 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
           ref={imageRef}
           src={imgActivePath}
           alt='imgProvince'
-          className='image'
+          className='w-[100%] h-[100%] transition duration-300 cursor-pointer'
           onMouseMove={handleMouseMove}
           onClick={handleImageClick}
         />
@@ -60,7 +59,11 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
           ref={imageRef}
           src={imgDefaultPath}
           alt='imgProvince'
-          className={hover ? 'image hover-effect' : 'image'}
+          className={
+            hover
+              ? 'w-[100%] h-[100%] transition duration-300 cursor-pointer brightness-[50%] transform scale-110'
+              : 'w-[100%] h-[100%] transition duration-300 cursor-pointer'
+          }
           onMouseMove={handleMouseMove}
           onClick={handleImageClick}
         />

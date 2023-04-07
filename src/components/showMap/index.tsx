@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RatchaburiIMGDefault from '@/assets/images/Ratchaburi_default.png';
 import RatchaburiIMGActive from '@/assets/images/Ratchaburi_active.png';
 import LampangIMGDefault from '@/assets/images/Lampang_default.png';
@@ -8,29 +8,36 @@ import LopburiIMGActive from '@/assets/images/Lopburi_active.png';
 import LamphunIMGDefault from '@/assets/images/Lamphun_default.png';
 import LamphunIMGActive from '@/assets/images/Lamphun_active.png';
 import MapHover from '../map';
+import useFilter from '@/hooks/useFilter';
 
 const Showmap = () => {
-  const [RatchaburiActive, setRatchaburiActive] = useState(false);
-  const [LampangActive, setLampangActive] = useState(false);
-  const [LopburiActive, setLopburiActive] = useState(false);
-  const [LamphunActive, setLamphunActive] = useState(false);
+  const { setFilterList } = useFilter();
+  const [RatchaburiActive, setRatchaburiActive] = useState(true);
+  const [LampangActive, setLampangActive] = useState(true);
+  const [LopburiActive, setLopburiActive] = useState(true);
+  const [LamphunActive, setLamphunActive] = useState(true);
 
   const handleClickRatchaburi = () => {
     setRatchaburiActive(!RatchaburiActive);
-    console.log('Ratchaburi:', RatchaburiActive);
   };
   const handleClickLampang = () => {
     setLampangActive(!LampangActive);
-    console.log('Lampang:', LampangActive);
   };
   const handleClickLopburi = () => {
     setLopburiActive(!LopburiActive);
-    console.log('Lopburi:', LopburiActive);
   };
   const handleClickLamphun = () => {
     setLamphunActive(!LamphunActive);
-    console.log('Lamphun:', LamphunActive);
   };
+
+  useEffect(() => {
+    const activeState = [];
+    if (RatchaburiActive) activeState.push('ราชบุรี');
+    if (LampangActive) activeState.push('ลำปาง');
+    if (LopburiActive) activeState.push('ลพบุรี');
+    if (LamphunActive) activeState.push('ลำพูน');
+    setFilterList(activeState);
+  }, [RatchaburiActive, LampangActive, LopburiActive, LamphunActive]);
 
   return (
     <div className='relative w-[25rem] 2xl:w-[30rem]'>
