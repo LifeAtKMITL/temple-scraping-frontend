@@ -5,9 +5,9 @@ import Diversity1Icon from '@mui/icons-material/Diversity1';
 import { useNavigate } from 'react-router-dom';
 
 const actions = [
-  { icon: <HomeIcon />, name: 'Home', link: '/' },
-  { icon: <ArticleIcon />, name: 'Document', link: '/document' },
   { icon: <Diversity1Icon />, name: 'Members', link: '/about' },
+  { icon: <ArticleIcon />, name: 'Document', link: '/document' },
+  { icon: <HomeIcon />, name: 'Home', link: '/' },
 ];
 
 export default function SpeedDial() {
