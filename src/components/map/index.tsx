@@ -48,7 +48,7 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
           ref={imageRef}
           src={imgActivePath}
           alt='imgProvince'
-          className='w-[100%] h-[100%] transition duration-300 cursor-pointer ease-in-out'
+          className='w-[100%] h-[100%] transition duration-300 cursor-pointer'
           onMouseMove={handleMouseMove}
           onClick={handleImageClick}
         />
@@ -59,7 +59,7 @@ const MapHover: React.FC<IMap> = ({ imgDefaultPath, imgActivePath, handleClickMa
           alt='imgProvince'
           className={
             hover
-              ? 'w-[100%] h-[100%] transition duration-300 cursor-pointer ease-in-out brightness-[50%] transform scale-110'
+              ? 'w-[100%] h-[100%] transition duration-300 cursor-pointer brightness-[50%] transform scale-110'
               : 'w-[100%] h-[100%] transition duration-300 cursor-pointer'
           }
           onMouseMove={handleMouseMove}
