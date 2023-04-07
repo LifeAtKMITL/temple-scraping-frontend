@@ -115,11 +115,11 @@ const members: MemberData[] = [
 
 export default function About() {
   return (
-    <div className='bg-[#10192D] min-w-[100vh] overflow-auto min-h-screen'>
+    <div className='bg-[#10192D] min-w-[100vh] overflow-hidden min-h-screen'>
       <div>
-        <h1 className='text-[#5EE8D5] text-[50px] flex justify-center font-bold py-8'>สมาชิกในทีม</h1>
+        <h1 className='text-[#5EE8D5] text-[40px] lg:text-[50px] flex justify-center font-bold py-8'>สมาชิกในทีม</h1>
       </div>
-      <div className='grid  md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 container mx-auto justify-items-center pt-[20px] gap-36 '>
+      <div className='grid  md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 container mx-auto justify-items-center pt-[20px] pb-[90px] gap-36 '>
         {members.map((member) => (
           <CardAbout key={member._id} {...member} />
         ))}
