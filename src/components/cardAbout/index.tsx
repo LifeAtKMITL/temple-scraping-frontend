@@ -9,13 +9,14 @@ import { Link } from 'react-router-dom';
 interface IMember {
   _id: string;
   name: string;
-  studentId: string;
+  studentID: string;
   img: string;
   github: string;
   quotation: string;
+  imgStyles: string;
 }
 
-export default function CardAbout({ name, studentId, img, github, quotation }: IMember) {
+export default function CardAbout({ name, studentID, img, github, quotation, imgStyles }: IMember) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
@@ -42,38 +43,33 @@ export default function CardAbout({ name, studentId, img, github, quotation }: I
         dragElastic={0.18}
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
         whileTap={{ cursor: 'grabbing' }}
-        className='w-[350px] min-h-[500px] bg-[#1E293B] rounded-[30px] border-[2px] border-[#e7e7e7] px-[40px] py-[24px] cursor-grab relative'
+        className='w-[220px] h-[280px]  bg-[#1E293B] rounded-[30px] border-[2px] border-[#e7e7e7] px-[25px] py-[24px] cursor-grab relative'
       >
-        <div className='text-xl mb-4 text-[#e7e7e7]'>{studentId}</div>
+        <div className='text-[15px] mb-1 text-[#e7e7e7]'>{studentID}</div>
         {/* card title */}
-        <h1 className='text-5xl mb-6 font-extrabold text-[#5EE8D5]'>{name}</h1>
+        <h1 className='text-2xl mb-4 font-extrabold text-[#5EE8D5]'>{name}</h1>
         {/* card subtitle */}
-        <p className='max-w-[300px] text-[#e7e7e7] mb-6 text-[26px]'>
-          <q>{quotation}</q>
-        </p>
+        <p className='max-w-[110px] text-[#e7e7e7] mb-3 text-[15px]'>{quotation}</p>
 
         {/* colors */}
-        <ul className='flex gap-x-[10px]'>
+        <ul className='flex gap-x-[5px]'>
           {colors.map((color, index) => {
             return (
               <li
                 key={index}
                 style={{ backgroundColor: color.value }}
-                className='w-7 h-7 rounded-full cursor-pointer'
+                className='w-3 h-3 rounded-full cursor-pointer'
               ></li>
             );
           })}
         </ul>
 
         <Link to={github} target='blank'>
-          <GoMarkGithub className='absolute bottom-4 text-[28px] text-[#e7e7e7]' />
+          <GoMarkGithub className='absolute bottom-6 text-[23px] text-[#e7e7e7]' />
         </Link>
 
         {/* card image */}
-        <motion.div
-          style={{ x, y, rotateX, rotateY, z: 100000 }}
-          className='absolute bottom-0 -right-[180px] w-[300px]'
-        >
+        <motion.div style={{ x, y, rotateX, rotateY, z: 100000 }} className={` ${imgStyles}`}>
           <img src={img} alt='' draggable='false' />
         </motion.div>
       </motion.div>
