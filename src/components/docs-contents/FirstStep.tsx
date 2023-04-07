@@ -1,4 +1,11 @@
+import { useState } from 'react';
+
+const imageList = [
+  'https://cdn.discordapp.com/attachments/1062631205910097984/1093872540037947492/8bd4fc46-8e4e-414b-a637-afa0b2de2fa5.png',
+];
 const FirstStep = () => {
+  const [imageUrl, setImageUrl] = useState(imageList[0]);
+
   return (
     <div>
       <h1 className='text-3xl text-blue-500'>Step 1: Scraping data 🦾 🔎 🧲 ⚙️</h1>
@@ -19,13 +26,13 @@ const FirstStep = () => {
           </a>
           - วิกิพีเดีย หมวดหมู่: รายชื่อวัดไทย
         </p>
-        <p>เราจะเลือกใช้ข้อมูลจากจังหวัดดังนี้ จ.ลำพูน 🐸 | จ.ลำปาง 🐟 | จ.ลพบุรี 🐵 | จ.ราชบุรี 🦙</p>
+        <p>
+          เราจะเลือกใช้ข้อมูลจากจังหวัดดังนี้ <button onClick={() => setImageUrl(imageList[0])}>จ.ลำพูน 🐸</button> |{' '}
+          <button>จ.ลำปาง 🐟</button> | <button>จ.ลพบุรี 🐵</button> | <button>จ.ราชบุรี 🦙</button>
+        </p>
         <br></br>
         <div className='flex justify-center'>
-          <img
-            src='https://cdn.discordapp.com/attachments/1062631205910097984/1093872540037947492/8bd4fc46-8e4e-414b-a637-afa0b2de2fa5.png'
-            alt='image'
-          />
+          <img src={imageUrl} alt='image' />
         </div>
         <br></br>
         <div>
