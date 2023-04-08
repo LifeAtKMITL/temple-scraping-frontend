@@ -2,6 +2,7 @@ import useTemple from '@/hooks/useTemple';
 import ExportButton from './ExportButton';
 import useFilter from '@/hooks/useFilter';
 import useSearch from '@/hooks/useSearch';
+import Navbar from './Navbar';
 
 const colors = ['text-orange-300', 'text-sky-300', 'text-amber-200', 'text-teal-200'];
 
@@ -18,7 +19,9 @@ function HomeContainer() {
   filtered = filtered?.filter((province) => filterList.includes(province.province));
 
   return (
-    <div className='w-full h-screen px-6 py-12 flex flex-col'>
+    <div className='w-full h-screen px-6 flex flex-col pb-10 xl:py-12'>
+      <Navbar />
+
       <div className='h-full overflow-y-scroll space-y-8 text-[#E8E8E8] mb-6'>
         {isLoading && <p className='animate-bounce'>Loading...</p>}
         {filtered &&
@@ -30,7 +33,7 @@ function HomeContainer() {
                     {province.province}{' '}
                     <span className='text-3xl inline-block -translate-y-1'>({province.data.length})</span>
                   </h1>
-                  <div className='h-0.5 grow bg-white mr-10' />
+                  <div className='h-0.5 grow bg-white xl:mr-10' />
                 </div>
               ) : null}
               <ul className='grid grid-cols-12 list-inside mt-4'>
