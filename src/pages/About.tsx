@@ -1,4 +1,3 @@
-import SpeedDial from '@/components/SpeedDial';
 import MemberCard from '@/components/MemberCard';
 
 interface MemberData {
@@ -124,7 +123,6 @@ export default function About() {
             <MemberCard key={member._id} {...member} />
           ))}
       </div>
-      <SpeedDial />
     </div>
   );
 }

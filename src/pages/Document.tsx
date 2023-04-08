@@ -1,4 +1,3 @@
-import SpeedDial from '@/components/SpeedDial';
 import { FirstStep, SecondStep, ThirdStep } from '@/components/docs-contents';
 import Steppy from '@/components/steppy';
 import { useState } from 'react';
@@ -42,7 +41,6 @@ export default function Document() {
       <Link to='/' className='justify-self-start'>
         <button className='text-white font-semibold'>👈 back to main</button>
       </Link>
-      <SpeedDial />
     </div>
   );
 }
