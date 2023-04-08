@@ -35,7 +35,7 @@ function HomeContainer() {
               ) : null}
               <ul className='grid grid-cols-12 list-inside mt-4'>
                 {province.data.map((name, idx) => (
-                  <li key={idx} className='col-span-2 xl:col-span-3 lg:col-span-6 md:col-span-6 list-disc'>
+                  <li key={idx} className='list-disc col-span-12 md:col-span-4 xl:col-span-3'>
                     {name}
                   </li>
                 ))}
