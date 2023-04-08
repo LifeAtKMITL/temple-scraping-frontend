@@ -3,6 +3,8 @@ import ExportButton from './ExportButton';
 import useFilter from '@/hooks/useFilter';
 import useSearch from '@/hooks/useSearch';
 
+const colors = ['text-orange-300', 'text-sky-300', 'text-amber-200', 'text-teal-200'];
+
 function HomeContainer() {
   const { provinces, isLoading } = useTemple();
   const { filterList } = useFilter();
@@ -20,11 +22,14 @@ function HomeContainer() {
       <div className='h-full overflow-y-scroll space-y-8 text-[#E8E8E8] mb-6'>
         {isLoading && <p className='animate-bounce'>Loading...</p>}
         {filtered &&
-          filtered.map((province, idx) => (
-            <div key={idx} className=''>
+          filtered.map((province, index) => (
+            <div key={province.province} className=''>
               {province.data.length ? (
-                <div className='flex items-center gap-4'>
-                  <h1 className='text-5xl'>{province.province}</h1>
+                <div className='flex items-center gap-6'>
+                  <h1 className={`text-5xl ${colors[index]}`}>
+                    {province.province}{' '}
+                    <span className='text-3xl inline-block -translate-y-1'>({province.data.length})</span>
+                  </h1>
                   <div className='h-0.5 grow bg-white mr-10' />
                 </div>
               ) : null}

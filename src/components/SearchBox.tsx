@@ -15,7 +15,7 @@ const SearchBox = () => {
     <input
       type='text'
       className='bg-bg text-white rounded-md px-4 py-3 w-full ring-teal-400 focus:ring-1 focus:outline-none '
-      placeholder='ค้นหาด้วยจังหวัด หรือ ชื่อวัด'
+      placeholder='พิมพ์ค้นหาด้วยชื่อวัด..'
       ref={textRef}
       onChange={searching}
     />
