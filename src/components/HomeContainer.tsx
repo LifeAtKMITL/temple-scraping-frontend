@@ -25,7 +25,7 @@ function HomeContainer() {
               {province.data.length ? (
                 <div className='flex items-center gap-4'>
                   <h1 className='text-5xl'>{province.province}</h1>
-                  <div className='h-0.5 grow bg-[#E8E8E8]' />
+                  <div className='h-0.5 grow bg-white mr-10' />
                 </div>
               ) : null}
               <ul className='grid grid-cols-12 list-inside mt-4'>

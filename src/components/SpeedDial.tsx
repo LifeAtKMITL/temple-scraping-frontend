@@ -17,7 +17,15 @@ export default function SpeedDial() {
     <MUISpeedDial
       ariaLabel='SpeedDial basic example'
       sx={{ position: 'absolute', bottom: 32, right: 32 }}
-      icon={<SpeedDialIcon />}
+      icon={<SpeedDialIcon sx={{ color: 'black' }} />}
+      FabProps={{
+        sx: {
+          bgcolor: 'rgb(94 234 212)',
+          '&:hover': {
+            bgcolor: 'rgb(20 184 166)',
+          },
+        },
+      }}
     >
       {actions.map((action) => (
         <SpeedDialAction
