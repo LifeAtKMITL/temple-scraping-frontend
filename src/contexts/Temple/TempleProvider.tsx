@@ -1,7 +1,7 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
 import TempleContext from './TempleContext';
-import { TemplesObject } from '@/types';
 import { getTemples as getTemplesAPI } from '@/api';
+import { TemplesObject } from '@/types';
 
 const TempleProvider = ({ children }: PropsWithChildren) => {
   const [provinces, setProvinces] = useState<TemplesObject[] | undefined>(undefined);

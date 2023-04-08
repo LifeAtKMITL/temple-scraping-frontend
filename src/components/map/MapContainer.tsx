@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import RatchaburiIMGDefault from '@/assets/images/Ratchaburi_default.png';
 import RatchaburiIMGActive from '@/assets/images/Ratchaburi_active.png';
 import LampangIMGDefault from '@/assets/images/Lampang_default.png';
@@ -7,10 +7,10 @@ import LopburiIMGDefault from '@/assets/images/Lopburi_default.png';
 import LopburiIMGActive from '@/assets/images/Lopburi_active.png';
 import LamphunIMGDefault from '@/assets/images/Lamphun_default.png';
 import LamphunIMGActive from '@/assets/images/Lamphun_active.png';
-import MapHover from '../map';
+import MapHover from './Map';
 import useFilter from '@/hooks/useFilter';
 
-const Showmap = () => {
+export default function MapContainer() {
   const { setFilterList } = useFilter();
   const [RatchaburiActive, setRatchaburiActive] = useState(true);
   const [LampangActive, setLampangActive] = useState(true);
@@ -75,6 +75,4 @@ const Showmap = () => {
       </div>
     </div>
   );
-};
-
-export default Showmap;
+}

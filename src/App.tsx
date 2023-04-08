@@ -1,22 +1,18 @@
+import FilterProvider from './contexts/filter/FilterProvider';
 import { RouterProvider } from 'react-router-dom';
-
+import SearchProvider from './contexts/search/SearchProvider';
+import TempleProvider from './contexts/temple/TempleProvider';
 import { router } from './routes';
-import TempleProvider from '@/contexts/Temple/TempleProvider';
-import SearchProvider from './contexts/Search/SearchProvider';
-import FilterProvider from './contexts/Filter/FilterProvider';
 
 function App() {
   return (
-    <>
-      {/* I don't know where to put this. 😢 */}
-      <TempleProvider>
-        <FilterProvider>
-          <SearchProvider>
-            <RouterProvider router={router} />
-          </SearchProvider>
-        </FilterProvider>
-      </TempleProvider>
-    </>
+    <TempleProvider>
+      <FilterProvider>
+        <SearchProvider>
+          <RouterProvider router={router} />
+        </SearchProvider>
+      </FilterProvider>
+    </TempleProvider>
   );
 }
 

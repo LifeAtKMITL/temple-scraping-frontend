@@ -1,21 +1,16 @@
-import React from 'react';
-import Showmap from '../showMap';
-import SearchBox from '../SearchBox';
+import SearchBox from './SearchBox';
+import { MapContainer } from './map';
 
-interface ArrowProps {
-  initialWidth?: number;
-}
-
-const ResizeDiv: React.FC<ArrowProps> = () => {
+const Sidebar = () => {
   return (
     <div className='flex px-5 rounded-r-xl bg-bg h-screen text-white'>
       <div className='mr-2.5 relative pt-6'>
         <p className='text-lg'>ค้นหาด้วยจังหวัดหรือชื่อวัด</p>
         <SearchBox />
-        <Showmap />
+        <MapContainer />
       </div>
     </div>
   );
 };
 
-export default ResizeDiv;
+export default Sidebar;
