@@ -3,12 +3,10 @@ import { MapContainer } from './map';
 
 const Sidebar = () => {
   return (
-    <div className='flex px-5 rounded-r-xl bg-bg h-screen text-white'>
-      <div className='mr-2.5 relative pt-6'>
-        <p className='text-lg'>ค้นหาด้วยจังหวัดหรือชื่อวัด</p>
-        <SearchBox />
-        <MapContainer />
-      </div>
+    <div className='pl-5 pr-10 py-10 rounded-r-xl bg-[#091124] h-screen text-white relative'>
+      <h1 className='text-xl mb-8 pl-1'>กลุ่ม ณัฐนันท์สุดเฟี้ยวกับไอเสี่ยวทั้ง 10</h1>
+      <SearchBox />
+      <MapContainer />
     </div>
   );
 };

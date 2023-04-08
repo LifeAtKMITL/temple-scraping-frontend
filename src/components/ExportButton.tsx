@@ -19,7 +19,7 @@ const ExportButton = () => {
   return (
     <div>
       <button
-        className='bg-[#5EE8D5] rounded-lg px-6 py-2 text-bg font-semibold'
+        className='bg-[#5EE8D5] rounded-lg px-6 py-2 text-bg sukhumvit-bold'
         onClick={() => {
           downloadCSV('templesList');
         }}

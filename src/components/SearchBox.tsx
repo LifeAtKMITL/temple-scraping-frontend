@@ -14,7 +14,7 @@ const SearchBox = () => {
   return (
     <input
       type='text'
-      className='bg-black/20 text-white rounded-md mt-[10px] px-4 py-2.5 w-full ring-teal-400 focus:ring-1 focus:outline-none'
+      className='bg-bg text-white rounded-md px-4 py-3 w-full ring-teal-400 focus:ring-1 focus:outline-none '
       placeholder='ค้นหาด้วยจังหวัด หรือ ชื่อวัด'
       ref={textRef}
       onChange={searching}
