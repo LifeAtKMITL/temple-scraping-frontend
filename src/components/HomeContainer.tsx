@@ -23,6 +23,8 @@ function HomeContainer() {
 
   filtered = filtered?.filter((province) => filterList.includes(province.province));
 
+  filtered = filtered?.filter((province) => province.data.length > 0);
+
   return (
     <div className='w-full h-screen px-6 flex flex-col pb-10 xl:py-12'>
       <Navbar />
