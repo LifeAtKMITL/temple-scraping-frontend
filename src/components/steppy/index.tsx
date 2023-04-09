@@ -60,12 +60,12 @@ type SteppyProps = {
 
 const Steppy = ({ steps, step }: SteppyProps) => {
   return (
-    <Stepper alternativeLabel activeStep={step} connector={<ColorlibConnector />} className='w-10/12'>
+    <Stepper alternativeLabel activeStep={step} connector={<ColorlibConnector />} className='w-11/12'>
       {steps.map((label) => {
         return (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>
-              <p className='text-white'>{label}</p>
+              <p className='text-white text-[0.70rem] lg:text-base'>{label}</p>
             </StepLabel>
           </Step>
         );
