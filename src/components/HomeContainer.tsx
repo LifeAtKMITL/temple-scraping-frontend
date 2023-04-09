@@ -4,7 +4,12 @@ import useFilter from '@/hooks/useFilter';
 import useSearch from '@/hooks/useSearch';
 import Navbar from './Navbar';
 
-const colors = ['text-orange-300', 'text-sky-300', 'text-amber-200', 'text-teal-200'];
+const colors = {
+  ราชบุรี: 'text-orange-300',
+  ลำปาง: 'text-amber-200',
+  ลพบุรี: 'text-sky-300',
+  ลำพูน: 'text-teal-200',
+};
 
 function HomeContainer() {
   const { provinces, isLoading } = useTemple();
@@ -27,7 +32,7 @@ function HomeContainer() {
           <div className='animate-pulse '>
             <div className='h-10 w-full md:w-80 xl:w-60 bg-slate-700 rounded-full' />
             <ul className='grid grid-cols-12 list-inside mt-8 gap-4'>
-              {[...Array(100)].map((_) => (
+              {[...Array(10).keys()].map((_) => (
                 <div
                   key={_}
                   className='h-3 w-48 bg-slate-700 rounded-full list-disc  col-span-12 md:col-span-4 xl:col-span-3'
@@ -37,11 +42,11 @@ function HomeContainer() {
           </div>
         )}
         {filtered &&
-          filtered.map((province, index) => (
+          filtered.map((province) => (
             <div key={province.province} className=''>
               {province.data.length ? (
                 <div className='flex items-center gap-6'>
-                  <h1 className={`text-5xl ${colors[index]}`}>
+                  <h1 className={`text-5xl ${colors[province.province as keyof typeof colors]}`}>
                     {province.province}{' '}
                     <span className='text-3xl inline-block -translate-y-1'>({province.data.length})</span>
                   </h1>
