@@ -1,7 +1,6 @@
 import { FirstStep, SecondStep, ThirdStep } from '@/components/docs-contents';
 import Steppy from '@/components/steppy';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const steps = ['Scraping Data 🔎', 'Get Content 🛠️', 'Result 🎉'];
 
@@ -44,9 +43,6 @@ export default function Document() {
           </button>
         </div>
       </div>
-      {/* <Link to='/' className='justify-self-start'>
-        <button className='text-white font-semibold'>👈 back to main</button>
-      </Link> */}
     </div>
   );
 }
