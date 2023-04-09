@@ -11,10 +11,10 @@ const FirstStep = () => {
       <h1 className='text-3xl text-blue-500'>Step 1: Scraping data 🦾 🔎 🧲 ⚙️</h1>
       <br></br>
       <p>Stage 1 : Scraping ข้อมูลวัดในจังหวัด 🛕 🇹🇭 </p>
-      <div className='mx-1 sm:mx-1 md:mx-2 lg:mx-4 xl:mx-8 2xl:mx-16'>
-        <p className='indent-10'>ในขั้นตอนที่ 1 สิ่งที่พวกเราทำคือ การทำ Crawling หรือ Scraping Data กันก่อน</p>
-      </div>
-      <div className='mx-1 sm:mx-1 md:mx-2 lg:mx-4 xl:mx-8 2xl:mx-16'>
+      <p className='indent-10 px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16'>
+        ในขั้นตอนที่ 1 สิ่งที่พวกเราทำคือ การทำ Crawling หรือ Scraping Data กันก่อน
+      </p>
+      <div className='px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16'>
         <p>
           โดยเราจะใช้ Source ข้อมูลจาก Website{' '}
           <a

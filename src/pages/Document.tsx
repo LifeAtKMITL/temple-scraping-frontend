@@ -26,18 +26,18 @@ export default function Document() {
     <div className='h-screen bg-bg grid grid-flow-row grid-rows-document justify-items-center p-4 gap-4 overflow-auto'>
       <h1 className='lg:text-3xl text-2xl text-center text-white font-bold'>ขั้นตอนการดึงข้อมูลรายชื่อวัด</h1>
       <Steppy steps={steps} step={step} />
-      <div className='rounded-lg bg-slate-300 p-6 w-11/12 xl:w-9/12 font-semibold flex flex-col h-fit text-sm lg:text-base overflow-y-scroll h-full'>
+      <div className='rounded-lg bg-slate-300 p-6 w-11/12 xl:w-9/12 font-semibold flex flex-col text-sm lg:text-base overflow-y-scroll h-full'>
         {content[step]}
         {/* TODO: idk this is dumb */}
         <div className='flex justify-between mt-4'>
           <button
-            className='bg-teal-300 rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-teal-400 active:bg-teal-300 transition text-xl'
+            className='bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl'
             onClick={handlePrev}
           >
             👈
           </button>
           <button
-            className='bg-teal-300 rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-teal-400 active:bg-teal-300 transition text-xl'
+            className='bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl'
             onClick={handleNext}
           >
             👉
