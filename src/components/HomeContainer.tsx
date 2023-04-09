@@ -23,7 +23,19 @@ function HomeContainer() {
       <Navbar />
 
       <div className='h-full overflow-y-scroll space-y-8 text-[#E8E8E8] mb-6'>
-        {isLoading && <p className='animate-bounce'>Loading...</p>}
+        {isLoading && (
+          <div className='animate-pulse '>
+            <div className='h-10 w-full md:w-80 xl:w-60 bg-slate-700 rounded-full' />
+            <ul className='grid grid-cols-12 list-inside mt-8 gap-4'>
+              {[...Array(100)].map((_) => (
+                <div
+                  key={_}
+                  className='h-3 w-48 bg-slate-700 rounded-full list-disc  col-span-12 md:col-span-4 xl:col-span-3'
+                />
+              ))}
+            </ul>
+          </div>
+        )}
         {filtered &&
           filtered.map((province, index) => (
             <div key={province.province} className=''>
@@ -37,8 +49,8 @@ function HomeContainer() {
                 </div>
               ) : null}
               <ul className='grid grid-cols-12 list-inside mt-4'>
-                {province.data.map((name, idx) => (
-                  <li key={idx} className='list-disc col-span-12 md:col-span-4 xl:col-span-3'>
+                {province.data.map((name) => (
+                  <li key={name} className='list-disc col-span-12 md:col-span-4 xl:col-span-3'>
                     {name}
                   </li>
                 ))}
