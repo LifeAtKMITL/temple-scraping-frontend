@@ -12,7 +12,7 @@ interface IMember {
   imgStyles: string;
 }
 
-export default function CardAbout({ name, studentID, img, github, quotation, imgStyles }: IMember) {
+export default function MemberCard({ name, studentID, img, github, quotation, imgStyles }: IMember) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);

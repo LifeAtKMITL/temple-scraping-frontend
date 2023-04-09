@@ -1,5 +1,4 @@
-import SpeedDial from '@/components/SpeedDial';
-import CardAbout from '@/components/cardAbout';
+import MemberCard from '@/components/MemberCard';
 
 interface MemberData {
   _id: string;
@@ -121,10 +120,9 @@ export default function About() {
         {members
           .sort(() => 0.5 - Math.random())
           .map((member) => (
-            <CardAbout key={member._id} {...member} />
+            <MemberCard key={member._id} {...member} />
           ))}
       </div>
-      <SpeedDial />
     </div>
   );
 }

@@ -1,24 +1,28 @@
 import useSearch from '@/hooks/useSearch';
 import { useRef } from 'react';
 
-const SearchBox = () => {
+type Props = {
+  bgColor?: string;
+};
+
+const SearchBox = ({ bgColor = 'bg' }: Props) => {
   const textRef = useRef<HTMLInputElement>(null);
-  const { setSearchText } = useSearch();
+  const { searchText, setSearchText } = useSearch();
 
   const searching = () => {
     const textSearch = textRef.current?.value || '';
 
     setSearchText(textSearch);
-
-    // console.log('search', searchText);
   };
 
   return (
     <input
       type='text'
-      className='bg-[#ffffff] text-black h-[30px] w-[300px] px-[3px] rounded-md mt-[10px]'
+      className={`bg-${bgColor} text-white rounded-md px-4 py-3 w-full ring-teal-400 focus:ring-1 focus:outline-none`}
+      placeholder='พิมพ์ค้นหาด้วยชื่อวัด..'
       ref={textRef}
       onChange={searching}
+      value={searchText}
     />
   );
 };

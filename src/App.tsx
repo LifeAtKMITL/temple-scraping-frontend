@@ -1,22 +1,23 @@
-import { RouterProvider } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import { router } from './routes';
-import TempleProvider from '@/contexts/Temple/TempleProvider';
-import SearchProvider from './contexts/Search/SearchProvider';
-import FilterProvider from './contexts/Filter/FilterProvider';
+import Routes from './routes';
+import SpeedDial from './components/SpeedDial';
+import FilterProvider from './contexts/filter/FilterProvider';
+import SearchProvider from './contexts/search/SearchProvider';
+import TempleProvider from './contexts/temple/TempleProvider';
 
 function App() {
   return (
-    <>
-      {/* I don't know where to put this. 😢 */}
+    <BrowserRouter>
       <TempleProvider>
         <FilterProvider>
           <SearchProvider>
-            <RouterProvider router={router} />
+            <Routes />
+            <SpeedDial />
           </SearchProvider>
         </FilterProvider>
       </TempleProvider>
-    </>
+    </BrowserRouter>
   );
 }
 

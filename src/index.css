@@ -23,6 +23,10 @@
   font-family: 'sukhumvit', 'sans-serif', 'Arial';
 }
 
+.sukhumvit-bold {
+  font-family: 'sukhumvit-bold', 'sans-serif', 'Arial';
+}
+
 /* - Firefox IE10 */
 * {
   /* scrollbar-color: rgb(88, 89, 91) rgba(0, 0, 0, 0); */

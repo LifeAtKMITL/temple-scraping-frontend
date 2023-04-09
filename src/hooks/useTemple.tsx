@@ -1,4 +1,4 @@
-import TempleContext from '@/contexts/Temple/TempleContext';
+import TempleContext from '@/contexts/temple/TempleContext';
 import { useContext } from 'react';
 
 const useTemple = () => {
