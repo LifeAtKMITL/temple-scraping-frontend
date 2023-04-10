@@ -11,7 +11,7 @@ const FirstStep = () => {
       <h1 className='text-3xl text-blue-500'>Step 1: Scraping data 🦾 🔎 🧲 ⚙️</h1>
       <br></br>
       <p>Stage 1 : Scraping ข้อมูลวัดในจังหวัด 🛕 🇹🇭 </p>
-      <p className='indent-10 px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16'>
+      <p className='indent-10 px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16 pt-3'>
         ในขั้นตอนที่ 1 สิ่งที่พวกเราทำคือ การทำ Crawling หรือ Scraping Data กันก่อน
       </p>
       <div className='px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16'>
@@ -36,9 +36,9 @@ const FirstStep = () => {
         </div>
         <br></br>
         <div>
-          <p>import requests</p>
+          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-lg shadow-black-600 '>import requests</p>
           <blockquote>
-            <p className='indent-10'>
+            <p className='indent-10 pt-3'>
               Requests เป็น Library ของภาษา Python ที่ใช้ในการทำ HTTP Requests ต่างๆ ได้ง่ายและสะดวก เช่น GET, POST,
               PUT, DELETE มีฟังก์ชั่นที่ช่วยให้สร้าง Request ไปยัง Server, รับ Response จาก Server, และจัดการกับ
               Response ได้ง่าย
@@ -47,9 +47,9 @@ const FirstStep = () => {
         </div>
         <br></br>
         <div>
-          <p>import re</p>
+          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-lg shadow-black-600'>import re</p>
           <blockquote>
-            <p className='indent-10'>
+            <p className='indent-10 pt-3'>
               Library ของภาษา Python ที่ใช้ในการทำ Regular Expression (Regex) ซึ่งเป็นการใช้รูปแบบของตัวอักษร (Pattern)
               เพื่อค้นหาและแก้ไขข้อความตามต้องการ สามารถใช้ re ในการค้นหา Pattern ในข้อความ, แทนที่ Pattern
               ด้วยข้อความอื่น, การตรวจสอบเเละแยกแยะข้อมูลจากข้อความ
