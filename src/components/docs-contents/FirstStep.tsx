@@ -48,7 +48,7 @@ const FirstStep = () => {
             </p>
           </blockquote> */}
         </div>
-        <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+        <div className=' border-blue-800 bg-gray-100 shadow shadow-gray-500 border-l-4 border-0 pl-4 pr-6 py-4 rounded-md mt-4'>
           <p>
             <strong> Requests :</strong> Library ของภาษา Python ที่ใช้ในการทำ HTTP Requests ต่างๆ ได้ง่ายและสะดวก เช่น
             GET, POST, PUT, DELETE มีฟังก์ชั่นที่ช่วยให้สร้าง Request ไปยัง Server, รับ Response จาก Server,
@@ -110,6 +110,7 @@ const FirstStep = () => {
             >
               &nbsp;Stage 1
             </a>
+            {'  '}
             เราจะนำมาใช้ regex เพื่อให้ได้ข้อมูลในช่วงที่ต้องการเท่านั้น
             ขั้นตอนนี้มีที่มาที่ไปมาจากการที่ทางผู้จัดทำได้ทดลองทำการดึงข้อมูลมาแล้วพบปัญหาในขั้นตอนต่อไป ทำให้เกิด
             วิธีการแก้ปัญหามาเป็นขั้นตอนนี้ โดยทางผู้จัดทำได้เลือกใช้ regex สำหรับการ match ตั้งแต่ tag `div` ของ html
@@ -119,57 +120,66 @@ const FirstStep = () => {
             className='mt-4'
             src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png'
           />
-          <p className='bg-stone-50 p-2 w-fit rounded-lg shadow-md shadow-gray-500 mt-5'>
-            regex 🎯 : r&apos;^.*?&lt;div class&quot;mw-parser-output&quot;&gt;((?:.*\n)*?)^.*?ดูเพิ่ม.*$&apos;
-          </p>
-          <div className='no1 mt-5'>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition bg-blue-200 px-2 py-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
-              1.
-            </p>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition   mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
-              ^.*
-            </p>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition  mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
-              &lt;div class&quot;mw-parser-output&quot;&gt;
-            </p>
+          <div className='mt-8'>
+            <span className='bg-stone-50 p-2 rounded-lg shadow-md w-fit'>
+              {'regex 🎯: ^.*?<div class="mw-parser-output">((?:.*\n)*?)^.*?ดูเพิ่ม.*$'}
+            </span>
+          </div>
+          <div className=' border-blue-500 bg-stone-50 shadow border-l-4 border-0 px-4 py-4 rounded-md mt-5'>
+            <ul className='space-y-3'>
+              <li>
+                <span className='hover:translate-x-1 hover:-translate-y-1 transition bg-stone-200 px-2 py-0.5 rounded-lg inline-flex'>
+                  {'^.*?<'}
+                </span>{' '}
+                การ match ตั้งเเต่จุดเริ่มต้นของบรรทัดแล้ว ตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้
+                จนถึงอักขระที่ต้องการ {"'<'"}
+                <ul className='space-y-3  ml-16 mt-2'>
+                  <li>
+                    <div className=' bg-stone-200 px-2 py-0.5 rounded-lg inline-flex'>{'^'}</div>
+                    <div className='ml-4 inline-flex'>
+                      ต้นบรรทัด (Beginning of line) หรือเริ่มต้นของข้อความ (Start of string)
+                    </div>
+                  </li>
+                  <li>
+                    <div className=' bg-stone-200 px-3 py-0.5 rounded-lg inline-flex'>{'.'}</div>
+                    <div className='ml-4 inline-flex'>แทนอักขระใดๆ</div>
+                  </li>
+                  <li>
+                    <div className=' bg-stone-200 px-2 py-0.5 rounded-lg inline-flex'>{'*?'}</div>
+                    <div className='ml-3 inline-flex'>
+                      {"'*'"} ซ้ำกันกี่ตัวก็ได้ {"'?'"} match อักขระดังกล่าว 0 หรือ 1 ครั้งเท่านั้น (non-greedy match)
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'<div class="mw-parser-output">'}</span> คือ
+                ผลที่ต้องการ match
+                <div className='flex justify-center '>
+                  <img
+                    className=' mt-4  shadow-md'
+                    src='https://cdn.discordapp.com/attachments/1062631205910097984/1095049715441205352/Screenshot_2023-04-11_at_1.16.26_AM.png'
+                  />
+                </div>
+              </li>
+              <li>
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'((?:.*\n)*?)'}</span> คือการ match
+                ตัวอักษรที่ไม่ใช่ {'< หรือ >'} ที่มากกว่า 1 ตัวเป็นต้นไป
+                <ul className='space-y-3'>
+                  <li>hello</li>
+                </ul>
+              </li>
+              <li>
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'^.*?'}</span> คือ &quot;Negative
+                Lookbehind&quot; เป็นการที่จะไม่ match string ใดๆที่มีตัวก่อนหน้าที่เป็น {'>'}
+              </li>
+              <li>
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'ดูเพิ่ม.*$'}</span> คือ &quot;Negative
+                Lookbehind&quot; เป็นการที่จะไม่ match string ใดๆที่มีตัวก่อนหน้าที่เป็น {'>'}
+              </li>
+            </ul>
+          </div>
 
-            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-lg mt-4'>
-              <p>
-                คือ การ match string ทั้งบรรทัด ในบรรทัดที่มี string ดังนี้ `&lt;div
-                class&quot;mw-parser-output&quot;&gt;`
-              </p>
-              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>^.*</p>
-              <p className='inline-flex'>
-                คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
-              </p>
-              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
-                &lt;div class&quot;mw-parser-output&quot;&gt;
-              </p>
-              <p className='inline-flex'>
-                คือการ match ตามตัวอักษรที่กำหนด <br />
-              </p>
-            </div>
-          </div>
-          <div className='no2 mt-5'>
-            <p className='bg-red-200 px-2 py-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>2.</p>
-            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>((?:.*\n)*?)</p>
-            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
-              <p>คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ</p>
-              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
-                ((?:.*\n)*?)
-              </p>
-              <p className='inline-flex'>
-                คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
-              </p>
-              <p>
-                - ( ) คือการจัดกลุ่มของ regex <br />
-                - (?:) คือการจัดกลุ่มของ regex แต่ไม่นับเป็นกลุ่ม <br />
-                - .*\n คือการ match string ตัวอักษรอะไรก็ได้ที่เป็นจำนวน &gt;= 0 <br />
-                ไปจนถึงจุดที่เริ่มต้นบรรทัดใหม่ (new line)
-                <br />
-              </p>
-            </div>
-          </div>
           <p>
             2. ((?:.*\n)*) คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ - () คือการจัดกลุ่มของ regex <br />
             - (?:) คือการจัดกลุ่มของ regex แต่ไม่นับเป็นกลุ่ม <br />
