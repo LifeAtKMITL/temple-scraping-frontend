@@ -39,7 +39,7 @@ const FirstStep = () => {
           <img src={imageUrl} alt='image' />
         </div>
         <div>
-          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>import requests</p>
+          <p className='bg-stone-50 p-2 w-fit rounded-lg shadow-md shadow-gray-500 mt-5'>import requests</p>
           {/* <blockquote>
             <p className='indent-10 pt-3'>
               Requests เป็น Library ของภาษา Python ที่ใช้ในการทำ HTTP Requests ต่างๆ ได้ง่ายและสะดวก เช่น GET, POST,
@@ -56,7 +56,7 @@ const FirstStep = () => {
           </p>
         </div>
         <div>
-          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>import re</p>
+          <p className='bg-stone-50 p-2 w-fit rounded-lg shadow-md shadow-gray-500 mt-5'>import re</p>
           {/* <blockquote>
             <p className='indent-10 pt-3'>
               Library ของภาษา Python ที่ใช้ในการทำ Regular Expression (Regex) ซึ่งเป็นการใช้รูปแบบของตัวอักษร (Pattern)
@@ -119,21 +119,21 @@ const FirstStep = () => {
             className='mt-4'
             src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png'
           />
-          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>
+          <p className='bg-stone-50 p-2 w-fit rounded-lg shadow-md shadow-gray-500 mt-5'>
             regex 🎯 : r&apos;^.*?&lt;div class&quot;mw-parser-output&quot;&gt;((?:.*\n)*?)^.*?ดูเพิ่ม.*$&apos;
           </p>
           <div className='no1 mt-5'>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition bg-blue-200 px-2 py-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition bg-blue-200 px-2 py-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
               1.
             </p>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition   mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition   mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
               ^.*
             </p>
-            <p className='hover:-translate-y-1 hover:translate-x-1 transition  mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition  mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>
               &lt;div class&quot;mw-parser-output&quot;&gt;
             </p>
 
-            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-lg mt-4'>
               <p>
                 คือ การ match string ทั้งบรรทัด ในบรรทัดที่มี string ดังนี้ `&lt;div
                 class&quot;mw-parser-output&quot;&gt;`
@@ -151,8 +151,8 @@ const FirstStep = () => {
             </div>
           </div>
           <div className='no2 mt-5'>
-            <p className='bg-red-200 px-2 py-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>2.</p>
-            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>((?:.*\n)*?)</p>
+            <p className='bg-red-200 px-2 py-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>2.</p>
+            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-lg shadow-md shadow-gray-500  inline-flex'>((?:.*\n)*?)</p>
             <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
               <p>คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ</p>
               <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
