@@ -124,17 +124,58 @@ const FirstStep = () => {
             วิธีการแก้ปัญหามาเป็นขั้นตอนนี้ โดยทางผู้จัดทำได้เลือกใช้ regex สำหรับการ match ตั้งแต่ tag `div` ของ html
             ที่มี class=&quot;mw-parser-output&quot; ไปจนถึงบรรทัดที่มีคำว่า &quot;ดูเพิ่ม&quot;
           </p>
-          <img src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png' />
+          <img
+            className='mt-4'
+            src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png'
+          />
           <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>
             regex 🎯 : r&apos;^.*?&lt;div class&quot;mw-parser-output&quot;&gt;((?:.*\n)*?)^.*?ดูเพิ่ม.*$&apos;
           </p>
-          <p className='mt-3'>
-            อธิบาย regular expression <br />
-            1. `^.*&lt;div class&quot;mw-parser-output&quot&gt; คือ การ match string ทั้งบรรทัด ในบรรทัดที่มี string
-            ดังนี้ `&lt;div class&quot;mw-parser-output&quot;&gt;` <br />
-            - ^.* คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
-            - &lt;div class=&quot;mw-parser-output&quot;&gt; คือการ match ตามตัวอักษรที่กำหนด
-            <br />
+          <div className='no1 mt-5'>
+            <p className='bg-blue-200 p-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>1.</p>
+            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>^.*</p>
+            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+              &lt;div class&quot;mw-parser-output&quot;&gt;
+            </p>
+
+            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+              <p>
+                คือ การ match string ทั้งบรรทัด ในบรรทัดที่มี string ดังนี้ `&lt;div
+                class&quot;mw-parser-output&quot;&gt;`
+              </p>
+              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>^.*</p>
+              <p className='inline-flex'>
+                คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
+              </p>
+              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+                &lt;div class&quot;mw-parser-output&quot;&gt;
+              </p>
+              <p className='inline-flex'>
+                คือการ match ตามตัวอักษรที่กำหนด <br />
+              </p>
+            </div>
+          </div>
+          <div className='no2 mt-5'>
+            <p className='bg-red-200 p-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>2.</p>
+            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>((?:.*\n)*?)</p>
+            <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+              <p>คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ</p>
+              <p className='mt-3 mr-5 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+                ((?:.*\n)*?)
+              </p>
+              <p className='inline-flex'>
+                คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
+              </p>
+              <p>
+                - ( ) คือการจัดกลุ่มของ regex <br />
+                - (?:) คือการจัดกลุ่มของ regex แต่ไม่นับเป็นกลุ่ม <br />
+                - .*\n คือการ match string ตัวอักษรอะไรก็ได้ที่เป็นจำนวน &gt;= 0 <br />
+                ไปจนถึงจุดที่เริ่มต้นบรรทัดใหม่ (new line)
+                <br />
+              </p>
+            </div>
+          </div>
+          <p>
             2. ((?:.*\n)*) คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ - () คือการจัดกลุ่มของ regex <br />
             - (?:) คือการจัดกลุ่มของ regex แต่ไม่นับเป็นกลุ่ม <br />
             - .*\n คือการ match string ตัวอักษรอะไรก็ได้ที่เป็นจำนวน &gt;= 0 <br />
