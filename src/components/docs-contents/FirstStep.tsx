@@ -34,27 +34,40 @@ const FirstStep = () => {
         <div className='flex justify-center'>
           <img src={imageUrl} alt='image' />
         </div>
-        <br></br>
         <div>
-          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-lg shadow-black-600 '>import requests</p>
-          <blockquote>
+          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>import requests</p>
+          {/* <blockquote>
             <p className='indent-10 pt-3'>
               Requests เป็น Library ของภาษา Python ที่ใช้ในการทำ HTTP Requests ต่างๆ ได้ง่ายและสะดวก เช่น GET, POST,
               PUT, DELETE มีฟังก์ชั่นที่ช่วยให้สร้าง Request ไปยัง Server, รับ Response จาก Server, และจัดการกับ
               Response ได้ง่าย
             </p>
-          </blockquote>
+          </blockquote> */}
         </div>
-        <br></br>
+        <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+          <p>
+            <strong> Requests :</strong> Library ของภาษา Python ที่ใช้ในการทำ HTTP Requests ต่างๆ ได้ง่ายและสะดวก เช่น
+            GET, POST, PUT, DELETE มีฟังก์ชั่นที่ช่วยให้สร้าง Request ไปยัง Server, รับ Response จาก Server,
+            และจัดการกับ Response ได้ง่าย
+          </p>
+        </div>
         <div>
-          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-lg shadow-black-600'>import re</p>
-          <blockquote>
+          <p className='bg-stone-50 p-2 w-fit rounded-2xl shadow-md shadow-gray-500 mt-5'>import re</p>
+          {/* <blockquote>
             <p className='indent-10 pt-3'>
               Library ของภาษา Python ที่ใช้ในการทำ Regular Expression (Regex) ซึ่งเป็นการใช้รูปแบบของตัวอักษร (Pattern)
               เพื่อค้นหาและแก้ไขข้อความตามต้องการ สามารถใช้ re ในการค้นหา Pattern ในข้อความ, แทนที่ Pattern
               ด้วยข้อความอื่น, การตรวจสอบเเละแยกแยะข้อมูลจากข้อความ
             </p>
-          </blockquote>
+          </blockquote> */}
+          <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+            <p>
+              <strong> re :</strong> Library ของภาษา Python ที่ใช้ในการทำ Regular Expression (Regex)
+              ซึ่งเป็นการใช้รูปแบบของตัวอักษร (Pattern) <br></br> เพื่อค้นหาและแก้ไขข้อความตามต้องการ สามารถใช้ re
+              ในการค้นหา Pattern ในข้อความ, แทนที่ Pattern ด้วยข้อความอื่น <br></br>
+              การตรวจสอบเเละแยกแยะข้อมูลจากข้อความ 🔎
+            </p>
+          </div>
         </div>
         <br></br>
         <p>
