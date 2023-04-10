@@ -24,7 +24,7 @@ export default function Document() {
   return (
     <div className='h-screen bg-bg grid grid-flow-row grid-rows-document justify-items-center p-4 gap-4 overflow-auto'>
       <h1 className='lg:text-3xl text-2xl text-center text-white font-bold'>ขั้นตอนการดึงข้อมูลรายชื่อวัด</h1>
-      <Steppy steps={steps} step={step} />
+      <Steppy steps={steps} step={step} setStep={setStep} />
       <div className='rounded-lg bg-slate-300 p-6 w-11/12 xl:w-9/12 font-semibold flex flex-col text-sm lg:text-base overflow-y-scroll h-full'>
         {content[step]}
         <div className={`flex mt-4 ${step === 0 ? 'justify-end' : 'justify-between'}`}>
