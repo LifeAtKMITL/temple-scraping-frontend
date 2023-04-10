@@ -153,7 +153,7 @@ const FirstStep = () => {
                 </ul>
               </li>
               <li>
-                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'<div class="mw-parser-output">'}</span> คือ
+                <span className=' bg-stone-200 px-2 py-0.5 rounded-lg'>{'<div class="mw-parser-output">'}</span> คือ
                 ผลที่ต้องการ match
                 <div className='flex justify-center '>
                   <img
@@ -163,24 +163,48 @@ const FirstStep = () => {
                 </div>
               </li>
               <li>
-                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'((?:.*\n)*?)'}</span> คือการ match
-                ตัวอักษรที่ไม่ใช่ {'< หรือ >'} ที่มากกว่า 1 ตัวเป็นต้นไป
-                <ul className='space-y-3'>
-                  <li>hello</li>
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'((?:.*\\n)*?)'}</span> คือ การ match String Text
+                กี่บรรทัดก็ได้ ไปเรื่อยๆ เเละจัดกลุ่ม
+                <ul className='space-y-3  ml-16 mt-3'>
+                  <li>
+                    <div className=' bg-stone-200 px-2 py-0.5 rounded-lg inline-flex'>{'( )'}</div>
+                    <div className='ml-3 inline-flex'>คือการจัดกลุ่มของ regex</div>
+                  </li>
+                  <li>
+                    <div className=' bg-stone-200 px-3 py-0.5 rounded-lg inline-flex'>{'(?:.*\\n)'}</div>
+                    <div className='ml-1 mt-3 inline-flex'>
+                      คือ &quot;Non-capturing group&quot; match ข้อความที่อยู่ในบรรทัดเดียวกันเเละบรรทัดถัดไป
+                      โดยไม่ต้องเก็บค่า value
+                    </div>
+                  </li>
+                  <li>
+                    <div className=' bg-stone-200 px-2 py-0.5 rounded-lg inline-flex'>{'*?'}</div>
+                    <div className='ml-3 inline-flex'>
+                      {"'*'"} ซ้ำกันกี่ตัวก็ได้ {"'?'"} match อักขระดังกล่าว 0 หรือ 1 ครั้งเท่านั้น (non-greedy match)
+                    </div>
+                  </li>
                 </ul>
               </li>
               <li>
-                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'^.*?'}</span> คือ &quot;Negative
-                Lookbehind&quot; เป็นการที่จะไม่ match string ใดๆที่มีตัวก่อนหน้าที่เป็น {'>'}
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'^.*?'}</span> การ match
+                ตั้งเเต่จุดเริ่มต้นของบรรทัดแล้ว ตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ จนถึงอักขระที่ต้องการ{' '}
+                {"'ด'"}
               </li>
               <li>
-                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'ดูเพิ่ม.*$'}</span> คือ &quot;Negative
-                Lookbehind&quot; เป็นการที่จะไม่ match string ใดๆที่มีตัวก่อนหน้าที่เป็น {'>'}
+                <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'ดูเพิ่ม.*$'}</span> คือการ match string
+                ในบรรทัดที่มีคำว่า `ดูเพิ่ม` ไปจนจบบรรทัดนั้น
+              </li>
+              <li>
+                <span className='flex justify-center bg-stone-200 px-2 py-0.5 rounded-lg'>
+                  {'# match div with class mw-parser-output to the line with the word "ดูเพิ่ม"'}
+                  <br></br>
+                  {'สรุป : match ตั้งเเต่ div class ข้อความไปเรื่อยๆ จนก่อนถึงดูเพิ่ม '}
+                </span>
               </li>
             </ul>
           </div>
 
-          <p>
+          {/* <p>
             2. ((?:.*\n)*) คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ - () คือการจัดกลุ่มของ regex <br />
             - (?:) คือการจัดกลุ่มของ regex แต่ไม่นับเป็นกลุ่ม <br />
             - .*\n คือการ match string ตัวอักษรอะไรก็ได้ที่เป็นจำนวน &gt;= 0 <br />
@@ -189,7 +213,7 @@ const FirstStep = () => {
             3. ^.*ดูเพิ่ม.*$ คือการ match string ในบรรทัดที่มีคำว่า `ดูเพิ่ม` ไปจนจบบรรทัดนั้น <br />
             - ^.* คือการ match จุดเริ่มต้นของบรรทัด แล้วตามด้วยตัวอักษรอะไรก็ได้ เป็นจำนวนกี่ตัวก็ได้ <br />
             - ดูเพิ่ม.*$ คือการ match string ที่มีคำว่า `ดูเพิ่ม` ไปจนสินสุดบรรทัดนั้น <br />
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
