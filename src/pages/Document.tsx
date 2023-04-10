@@ -27,16 +27,19 @@ export default function Document() {
       <Steppy steps={steps} step={step} />
       <div className='rounded-lg bg-slate-300 p-6 w-11/12 xl:w-9/12 font-semibold flex flex-col text-sm lg:text-base overflow-y-scroll h-full'>
         {content[step]}
-        {/* TODO: idk this is dumb */}
-        <div className='flex justify-between mt-4'>
+        <div className={`flex mt-4 ${step === 0 ? 'justify-end' : 'justify-between'}`}>
           <button
-            className='bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl'
+            className={`bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl ${
+              step === 0 ? 'hidden' : ''
+            }`}
             onClick={handlePrev}
           >
             👈
           </button>
           <button
-            className='bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl'
+            className={`bg-bg rounded-lg px-6 py-2 text-bg sukhumvit-bold hover:bg-slate-800 transition text-xl ${
+              step === 2 ? 'hidden' : ''
+            }`}
             onClick={handleNext}
           >
             👉
