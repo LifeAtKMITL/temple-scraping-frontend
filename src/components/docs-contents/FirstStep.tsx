@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 const imageList = [
   'https://cdn.discordapp.com/attachments/1062631205910097984/1093872540037947492/8bd4fc46-8e4e-414b-a637-afa0b2de2fa5.png',
@@ -6,20 +6,13 @@ const imageList = [
 const FirstStep = () => {
   const [imageUrl, setImageUrl] = useState(imageList[0]);
 
-  const stage1ref = useRef(null);
-
-  const stage1refhandleScroll = (ref: any) => {
-    stage1ref.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
-
   return (
-    <div>
-      <h1 className='text-3xl text-blue-500'>Step 1: Scraping data 🦾 🔎 🧲 ⚙️</h1>
+    <div className='scroll-smooth'>
+      <h1 id='stage-1' className='text-3xl text-blue-500'>
+        Step 1: Scraping data 🦾 🔎 🧲 ⚙️
+      </h1>
       <br></br>
-      <div ref={stage1ref}>
+      <div>
         <p>Stage 1 : Scraping ข้อมูลวัดในจังหวัด 🛕 🇹🇭 </p>
       </div>
       <p className='indent-10 px-1 md:px-2 lg:px-4 xl:px-8 2xl:px-16 pt-3'>
@@ -71,7 +64,7 @@ const FirstStep = () => {
               ด้วยข้อความอื่น, การตรวจสอบเเละแยกแยะข้อมูลจากข้อความ
             </p>
           </blockquote> */}
-          <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
+          <div className=' border-blue-800 bg-gray-100 shadow shadow-gray-500 border-l-4 border-0 pl-4 pr-6 py-4 rounded-md mt-4'>
             <p>
               <strong> re :</strong> Library ของภาษา Python ที่ใช้ในการทำ Regular Expression (Regex)
               ซึ่งเป็นการใช้รูปแบบของตัวอักษร (Pattern) <br></br> เพื่อค้นหาและแก้ไขข้อความตามต้องการ สามารถใช้ re
@@ -111,14 +104,12 @@ const FirstStep = () => {
         <div>
           <p className='indent-6'>
             จากผลลัพธ์ที่ได้จาก&nbsp;
-            <button
+            <a
               className='from-purple-500 to-blue-500 bg-gradient-to-r bg-clip-text text-transparent animate-pulse'
-              onClick={() => {
-                stage1refhandleScroll(stage1ref.current);
-              }}
+              href='#stage-1'
             >
               &nbsp;Stage 1
-            </button>
+            </a>
             เราจะนำมาใช้ regex เพื่อให้ได้ข้อมูลในช่วงที่ต้องการเท่านั้น
             ขั้นตอนนี้มีที่มาที่ไปมาจากการที่ทางผู้จัดทำได้ทดลองทำการดึงข้อมูลมาแล้วพบปัญหาในขั้นตอนต่อไป ทำให้เกิด
             วิธีการแก้ปัญหามาเป็นขั้นตอนนี้ โดยทางผู้จัดทำได้เลือกใช้ regex สำหรับการ match ตั้งแต่ tag `div` ของ html
@@ -132,9 +123,13 @@ const FirstStep = () => {
             regex 🎯 : r&apos;^.*?&lt;div class&quot;mw-parser-output&quot;&gt;((?:.*\n)*?)^.*?ดูเพิ่ม.*$&apos;
           </p>
           <div className='no1 mt-5'>
-            <p className='bg-blue-200 p-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>1.</p>
-            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>^.*</p>
-            <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition bg-blue-200 px-2 py-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>
+              1.
+            </p>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition   mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
+              ^.*
+            </p>
+            <p className='hover:-translate-y-1 hover:translate-x-1 transition  mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>
               &lt;div class&quot;mw-parser-output&quot;&gt;
             </p>
 
@@ -156,7 +151,7 @@ const FirstStep = () => {
             </div>
           </div>
           <div className='no2 mt-5'>
-            <p className='bg-red-200 p-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>2.</p>
+            <p className='bg-red-200 px-2 py-1 w-fit rounded-full shadow-md shadow-gray-500  inline-flex'>2.</p>
             <p className='mx-2 bg-stone-50 p-1 w-fit rounded-xl shadow-md shadow-gray-500  inline-flex'>((?:.*\n)*?)</p>
             <div className=' border-blue-800 bg-gray-100 border  border-l-4 pl-4 pr-6 py-4 rounded-md mt-4'>
               <p>คือ การ match string กี่บรรทัดก็ได้ ไปเรื่อยๆ</p>

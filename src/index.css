@@ -33,6 +33,7 @@
   /* scrollbar-width: 4px; */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
 
 /* - Chrome Safari Edge */
