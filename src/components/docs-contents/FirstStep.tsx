@@ -104,10 +104,12 @@ const FirstStep = () => {
           วิธีการแก้ปัญหามาเป็นขั้นตอนนี้ โดยทางผู้จัดทำได้เลือกใช้ regex สำหรับการ match ตั้งแต่ `div` ของ html ที่มี
           class=&quot;mw-parser-output&quot; ไปจนถึงบรรทัดที่มีคำว่า `ดูเพิ่ม`
         </p>
-        <img
-          className='mt-4'
-          src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png'
-        />
+        <div className='mt-4 flex justify-center'>
+          <img
+            src='https://media.discordapp.net/attachments/1014398974649708624/1093794634976731176/image.png'
+            className='w-auto md:max-w-xl'
+          />
+        </div>
         <div className='bg-stone-50 p-2 rounded-lg shadow w-fit mt-8'>
           {'regex 🎯: ^.*?<div class="mw-parser-output">((?:.*\n)*?)^.*?ดูเพิ่ม.*$'}
         </div>
