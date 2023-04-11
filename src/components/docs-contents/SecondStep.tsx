@@ -21,7 +21,7 @@ const SecondStep = ({ setStep }: SecondStepProp) => {
       <section className='flex flex-col gap-2 leading-relaxed'>
         <h2 className='text-2xl text-blue-500'>คำอธิบาย Regular Expression</h2>
         <span className='bg-stone-50 p-2 rounded-lg shadow-md w-fit'>{'regex 🎯: ^.*<li>.*$'}</span>
-        <div className=' border-blue-500 bg-stone-50 shadow border-l-4 border-0 px-4 py-4 rounded-md'>
+        <div className=' border-blue-500 bg-stone-50 shadow border-l-4 border-0 px-4 py-4 rounded-md flex flex-col gap-2'>
           <ul className='space-y-3'>
             <li>
               <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>^.*</span> คือการ match จุดเริ่มต้นของบรรทัด
@@ -32,9 +32,12 @@ const SecondStep = ({ setStep }: SecondStepProp) => {
               ไปจนสิ้นสุดบรรทัดนั้น
             </li>
           </ul>
+          <div className='bg-stone-200 px-2 py-0.5 rounded-lg w-fit self-center text-center'>
+            match บรรทัดที่มีคำว่า {'"<li>"'} ทั้งบรรทัด
+          </div>
         </div>
         <span className='bg-stone-50 p-2 rounded-lg shadow-md w-fit'>{'regex 🎯: (?<!<)(?![^<>]*>)[^<>]+(?<!>)'}</span>
-        <div className=' border-blue-500 bg-stone-50 shadow border-l-4 border-0 px-4 py-4 rounded-md'>
+        <div className=' border-blue-500 bg-stone-50 shadow border-l-4 border-0 px-4 py-4 rounded-md flex flex-col gap-2'>
           <ul className='space-y-3'>
             <li>
               <span className='bg-stone-200 px-2 py-0.5 rounded-lg'>{'(?<!<)'}</span> คือ &quot;Negative
@@ -53,6 +56,14 @@ const SecondStep = ({ setStep }: SecondStepProp) => {
               Lookbehind&quot; เป็นการที่จะไม่ match string ใดๆที่มีตัวก่อนหน้าที่เป็น {'>'}
             </li>
           </ul>
+          <div className='bg-stone-200 px-2 py-0.5 rounded-lg w-fit self-center text-center'>
+            match string ที่อยู่ภายใน tag ต่างๆของ html ยกตัวอย่างเช่น {'<h1>'}
+            <span className='bg-blue-300 rounded'>content</span>
+            {'<a title="troll">'}
+            <span className='bg-blue-300 rounded'>important</span>
+            {'</a>'}
+            {'</h1>'}
+          </div>
         </div>
       </section>
     </div>
