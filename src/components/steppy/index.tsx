@@ -56,16 +56,19 @@ function ColorlibStepIcon(props: StepIconProps) {
 type SteppyProps = {
   steps: string[];
   step: number;
+  setStep: (step: number) => void;
 };
 
-const Steppy = ({ steps, step }: SteppyProps) => {
+const Steppy = ({ steps, step, setStep }: SteppyProps) => {
   return (
-    <Stepper alternativeLabel activeStep={step} connector={<ColorlibConnector />} className='w-10/12'>
-      {steps.map((label) => {
+    <Stepper alternativeLabel activeStep={step} connector={<ColorlibConnector />} className='w-11/12'>
+      {steps.map((label, idx) => {
         return (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>
-              <p className='text-white'>{label}</p>
+              <button className='text-white text-[0.70rem] lg:text-base font-[sukhumvit]' onClick={() => setStep(idx)}>
+                {label}
+              </button>
             </StepLabel>
           </Step>
         );
