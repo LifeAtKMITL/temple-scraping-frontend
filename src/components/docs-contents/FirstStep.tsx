@@ -1,11 +1,4 @@
-import { useState } from 'react';
-
-const imageList = [
-  'https://cdn.discordapp.com/attachments/1062631205910097984/1093872540037947492/8bd4fc46-8e4e-414b-a637-afa0b2de2fa5.png',
-];
 const FirstStep = () => {
-  const [imageUrl, setImageUrl] = useState(imageList[0]);
-
   return (
     <div className='scroll-smooth'>
       <h1 id='stage-1' className='text-3xl text-blue-500'>
@@ -29,13 +22,14 @@ const FirstStep = () => {
           </a>
           - วิกิพีเดีย หมวดหมู่: รายชื่อวัดไทย
         </p>
-        <p>
-          เราจะเลือกใช้ข้อมูลจากจังหวัดดังนี้ <button onClick={() => setImageUrl(imageList[0])}>จ.ลำพูน 🐸</button> |{' '}
-          <button>จ.ลำปาง 🐟</button> | <button>จ.ลพบุรี 🐵</button> | <button>จ.ราชบุรี 🦙</button>
-        </p>
+        <p>เราจะเลือกใช้ข้อมูลจากจังหวัดดังนี้ จ.ลำพูน 🐸 | จ.ลำปาง 🐟 | จ.ลพบุรี 🐵 | จ.ราชบุรี 🦙</p>
         <br></br>
         <div className='flex justify-center w-auto'>
-          <img src={imageUrl} alt='image' className='w-auto md:max-w-xl' />
+          <img
+            src='https://cdn.discordapp.com/attachments/1062631205910097984/1093872540037947492/8bd4fc46-8e4e-414b-a637-afa0b2de2fa5.png'
+            alt='image'
+            className='w-auto md:max-w-xl'
+          />
         </div>
         <div>
           <p className='bg-stone-50 p-2 w-fit rounded-lg shadow mt-5'>import requests</p>
@@ -58,33 +52,6 @@ const FirstStep = () => {
             </p>
           </div>
         </div>
-        <br></br>
-        <p>
-          url ={' '}
-          <a
-            href='https://th.wikipedia.org/wiki/รายชื่อวัดในจังหวัดลำพูน'
-            className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 animate-pulse'
-          >
-            https://th.wikipedia.org/wiki/หมวดหมู่:รายชื่อวัดในจังหวัดลำพูน{' '}
-          </a>
-          - วิกิพีเดีย หมวดหมู่: รายชื่อวัดในจังหวัดลำพูน
-        </p>
-        <p>def fetch_data(url)</p>
-        <p className='indent-10'>response =requests.get(url) 👈 เราจะได้ ข้อมูล HTML ทั้งหน้าของ จ.ลำพูน</p>
-        <p className='indent-10'>
-          scraped_text = response.text 👈 เเปลงข้อมูล Tag HTML ทั้งหน้า ให้เป็น String เพื่อให้ Python เข้าใจ
-          เเละนำไปใช้งาน Regex ได้ !!!
-        </p>
-        <br></br>
-        <div className='flex justify-center'>
-          <img
-            src='https://cdn.discordapp.com/attachments/1062631205910097984/1093875172978729020/Screenshot_2023-04-07_at_7.29.02_PM.png'
-            alt='image'
-            className='w-auto md:max-w-xl rounded'
-          />
-        </div>
-        <br></br>
-        <p>เย้ ดึงข้อมูลได้เเล้ว ที่นี้เราก็ได้ Web Scraping ออกมาเเล้ว เเต่ยังไม่เสร็จนะ ไปดู Step ถัดไปกันเลย !!!</p>
         <br></br>
       </div>
       <div>
