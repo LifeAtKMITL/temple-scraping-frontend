@@ -10,9 +10,10 @@ interface IMember {
   github: string;
   quotation: string;
   imgStyles: string;
+  imgSize: string;
 }
 
-export default function MemberCard({ name, studentID, img, github, quotation, imgStyles }: IMember) {
+export default function MemberCard({ name, studentID, img, github, quotation, imgStyles, imgSize }: IMember) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
@@ -66,7 +67,7 @@ export default function MemberCard({ name, studentID, img, github, quotation, im
 
         {/* card image */}
         <motion.div style={{ x, y, rotateX, rotateY, z: 100000 }} className={` ${imgStyles}`}>
-          <img src={img} alt='' draggable='false' />
+          <img src={img} alt='' draggable='false' className={` ${imgSize}`} />
         </motion.div>
       </motion.div>
     </div>
