@@ -15,7 +15,7 @@ const links = [
   {
     icon: <FaPython fontSize='1.8rem' />,
     name: 'Backend',
-    url: '/https://github.com/LifeAtKMITL/temple-scraping-backend',
+    url: 'https://github.com/LifeAtKMITL/temple-scraping-backend',
   },
   {
     icon: <FaReact fontSize='1.8rem' />,
