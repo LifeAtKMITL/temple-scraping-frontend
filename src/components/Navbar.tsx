@@ -4,7 +4,7 @@ import SearchBox from './SearchBox';
 export default function Navbar() {
   return (
     <div className='xl:hidden pt-8 pb-6 mb-2'>
-      <h1 className='text-white sukhumvit-bold pl-1 mb-6 text-xl'>ณัฐนันท์สุดเฟี้ยวกับไอเสี่ยวทั้ง 10</h1>
+      <h1 className='text-white sukhumvit-bold pl-1 mb-6 text-xl'>กลุ่ม ณัฐนันท์สุดเฟี้ยวกับไอเสี่ยวทั้ง 9</h1>
 
       <SearchBox bgColor='secondary' />
 
