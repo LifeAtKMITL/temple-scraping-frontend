@@ -3,11 +3,25 @@ import HomeIcon from '@mui/icons-material/Home';
 import ArticleIcon from '@mui/icons-material/Article';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import { useNavigate } from 'react-router-dom';
+import { FaReact, FaPython } from 'react-icons/fa';
 
 const actions = [
   { icon: <Diversity1Icon />, name: 'Members', link: '/about' },
   { icon: <ArticleIcon />, name: 'Document', link: '/document' },
   { icon: <HomeIcon />, name: 'Home', link: '/' },
+];
+
+const links = [
+  {
+    icon: <FaPython fontSize='1.8rem' />,
+    name: 'Backend',
+    url: '/https://github.com/LifeAtKMITL/temple-scraping-backend',
+  },
+  {
+    icon: <FaReact fontSize='1.8rem' />,
+    name: 'Frontend',
+    url: 'https://github.com/LifeAtKMITL/temple-scraping-frontend',
+  },
 ];
 
 export default function SpeedDial() {
@@ -27,6 +41,14 @@ export default function SpeedDial() {
         },
       }}
     >
+      {links.map((link) => (
+        <SpeedDialAction
+          key={link.name}
+          icon={link.icon}
+          tooltipTitle={link.name}
+          onClick={() => window.open(link.url, '_blank')}
+        />
+      ))}
       {actions.map((action) => (
         <SpeedDialAction
           key={action.name}
